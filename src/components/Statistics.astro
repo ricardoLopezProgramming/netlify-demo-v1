@@ -1,0 +1,142 @@
+---
+interface Props {
+  name: string;
+  hp: number;
+  attack: number;
+  defense: number;
+  special_attack: number;
+  special_defense: number;
+  speed: number;
+}
+
+const { name, hp, attack, defense, special_attack, special_defense, speed } =
+  Astro.props;
+---
+
+<!-- <div class="bg-slate-700">
+
+</div> -->
+<section
+  class="p-6 text-1xl md:text-2xl text-white flex-grow h-[100%] bg-[#0075BE]"
+>
+  <div id="logo" class="flex justify-center">
+    <img
+      class="object-contain w-[35%] sm:w-[40%] md:w-[45%]"
+      src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png"
+      alt=""
+    />
+  </div>
+  <slot />
+  <div id="stats" class="w-full p-8 mt-14">
+    <ul class="grid grid-flow-row gap-4">
+      <li>
+        <img src="" alt="" />
+        <span class="text-[18px] font-medium text-white dark:text-white">Name: {name}</span>
+      </li>
+      <li>
+        <img src="" alt="" />
+        <span class="text-[18px] font-medium text-white dark:text-white">Health</span>
+        <div
+          class="w-full max-w-full bg-gray-200 rounded-full dark:bg-gray-700"
+        >
+          <div
+            class="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full"
+            style=`width: ${hp >= 100 ? 100 : hp}%`
+          >
+          HP: {hp}
+          </div>
+        </div>
+      </li>
+      <li>
+        <img src="" alt="" />
+        <span class="text-[18px] font-medium text-white dark:text-white">Attack</span>
+        <div
+          class="w-full max-w-full bg-gray-200 rounded-full dark:bg-gray-700"
+        >
+          <div
+            class="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full"
+            style=`width: ${attack >= 100 ? 100 : attack}%`
+          >
+          Attack: {attack}
+          </div>
+        </div>
+      </li>
+      <li>
+        <img src="" alt="" />
+        <span class="text-[18px] font-medium text-white dark:text-white">Defense</span>
+        <div
+          class="w-full max-w-full bg-gray-200 rounded-full dark:bg-gray-700"
+        >
+          <div
+            class="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full"
+            style=`width: ${defense >= 100 ? 100 : defense}%`
+          >
+          Defense: {defense}
+          </div>
+        </div>
+      </li>
+      <li>
+        <img src="" alt="" />
+        <span class="text-[18px] font-medium text-white dark:text-white">Special Attack</span>
+        <div
+          class="w-full max-w-full bg-gray-200 rounded-full dark:bg-gray-700"
+        >
+          <div
+            class="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full"
+            style=`width: ${special_attack >= 100 ? 100 : special_attack}%`
+          >
+          Special Attack: {special_attack}
+          </div>
+        </div>
+      </li>
+      <li>
+        <img src="" alt="" />
+        <span class="text-[18px] font-medium text-white dark:text-white">Special Defense</span>
+        <div
+          class="w-full max-w-full bg-gray-200 rounded-full dark:bg-gray-700"
+        >
+          <div
+            class="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full"
+            style=`width: ${special_defense >= 100 ? 100 : special_defense}%`
+          >
+          Special Defense: {special_defense}
+          </div>
+        </div>
+      </li>
+      <li>
+        <img src="" alt="" />
+        <span class="text-[18px] font-medium text-white dark:text-white">Speed</span>
+        <div
+          class="w-full max-w-full bg-gray-200 rounded-full dark:bg-gray-700"
+        >
+          <div
+            class="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full"
+            style=`width: ${speed >= 100 ? 100 : speed}%`
+          >
+          Speed: {speed}
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 6fr;
+    justify-items: center;
+  }
+
+  @media (min-width: 768px) {
+    section {
+      display: flex;
+      flex-direction: column;
+      width: 40%;
+    }
+    #logo {
+    }
+
+  }
+</style>

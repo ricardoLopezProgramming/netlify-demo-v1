@@ -1,0 +1,21 @@
+---
+
+interface Props {
+    op1: string;
+    op2: string;
+    op3: string;
+}
+
+const {op1, op2, op3} = Astro.props;
+---
+
+<header class="p-[16px] w-dvw bg-white">
+<nav class="w-full flex justify-between flex-wrap text-white font-bold">
+    <h1 class="text-2xl text-center flex-grow h-max">PokeCards</h1>
+    <ul class="mt-2 flex justify-evenly items-center flex-wrap flex-grow-[5] h-max">
+        <li><a href="/">{op1}</a></li>
+        <li><a href='about'>{op2}</a></li>
+        <li><a href="#">{op3}</a></li>
+    </ul>
+</nav>
+</header>
